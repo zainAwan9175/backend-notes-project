@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="min-h-[100vh] bg-zinc-900 flex flex-col justify-center items-center">
+       <div class="w-[300px]">
+        <form class="flex flex-col gap-5" action="/create" method="post">
+            <input placeholder="enter title" class="bg-zinc-300" name="title">
+            <textarea placeholder="enter body" class="bg-zinc-300" name="dic"></textarea>
+            <button class="text-white">generate</button>
+        </form>
+       </div>
+
+       <div class=" flex justify-center p-6 gap-5">
+
+        <% if (files.length > 0) { %>
+            <% files.forEach((file) => { %>
+                <div class="bg-zinc-500 w-[300px] p-6 text-white rounded">
+                    <h1><%= file%></h1>
+                    <a href="/files/<%=file%>" class="text-blue-900" >read</a>
+                </div>
+            <% }) %>
+        <% } %>
+
+       </div>
+
+    </div>
+</body>
+</html>
